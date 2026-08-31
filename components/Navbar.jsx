@@ -15,7 +15,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
     { id: 'explore', label: 'Explore Monuments', icon: 'Compass' },
     { id: 'personalize', label: 'AI Personalizer', icon: 'Sparkles', badge: 'Smart' },
     { id: 'walks', label: 'Heritage Walks', icon: 'Footprints' },
-    { id: 'features', label: 'Why Virasaat', icon: 'ShieldCheck' }
+    { id: 'features', label: 'Why Pune Varsa', icon: 'ShieldCheck' }
   ];
 
   return (
@@ -37,8 +37,9 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
             </div>
             <div>
               <div className="flex items-center space-x-1.5">
-                <span className="font-display font-bold text-xl tracking-wider text-white">VIRASAAT</span>
-                <span className="text-xs px-1.5 py-0.5 rounded font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">PUNE</span>
+                <span className="font-display font-bold text-xl tracking-wider text-white">PUNE</span>
+                <span className="font-display font-bold text-xl tracking-wider text-amber-400">VARSA</span>
+                <span className="text-xs px-1.5 py-0.5 rounded font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">AI</span>
               </div>
               <p className="text-[10px] text-slate-400 tracking-wider">AI HERITAGE EXPLORER</p>
             </div>

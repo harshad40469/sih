@@ -37,7 +37,7 @@ function FeaturesSection() {
             Pune's History. <span className="text-heritage-gradient">Your Way.</span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Standard travel guides give everyone the same static paragraph. Virasaat Pune uses AI context awareness to tailor every story, monument route, and recommendation to who you are.
+            Standard travel guides give everyone the same static paragraph. Pune Varsa uses AI context awareness to tailor every story, monument route, and recommendation to who you are.
           </p>
         </div>
 

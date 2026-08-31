@@ -1,4 +1,4 @@
-# 🏛️ Virasaat — AI-Powered Personalized Pune Heritage Explorer
+# 🏛️ Pune Varsa — AI-Powered Personalized Pune Heritage Explorer
 
 > **Smart India Hackathon (SIH) Project**  
 > *Transforming fragmented monument facts into personalized, interactive heritage journeys.*
@@ -11,9 +11,9 @@
 
 ---
 
-## 💡 What Virasaat Solves
+## 💡 What Pune Varsa Solves
 
-1. **Context & Personalization Gap**: Traditional guidebooks provide static, identical paragraphs to everyone. Virasaat dynamically adapts stories, routes, and recommendations according to each visitor's interests (Maratha heritage, 8th-century architecture, religious shrines, art & museums, photography viewpoints) and available time window (1 hour to full day).
+1. **Context & Personalization Gap**: Traditional guidebooks provide static, identical paragraphs to everyone. Pune Varsa dynamically adapts stories, routes, and recommendations according to each visitor's interests (Maratha heritage, 8th-century architecture, religious shrines, art & museums, photography viewpoints) and available time window (1 hour to full day).
 2. **Scattered Information**: Aggregates comprehensive historical backgrounds, architectural breakdowns, entry tickets, timings, and interesting folklore into a unified interactive platform.
 3. **Interactive AI Guidance**: Offers an instant conversational AI heritage assistant (**Punya AI**) and on-demand audio narration for every monument.
 

@@ -15,8 +15,9 @@ function Footer({ onNavigate }) {
                 </div>
               </div>
               <div>
-                <span className="font-display font-bold text-lg text-white">VIRASAAT</span>
-                <span className="text-[10px] ml-1 px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">PUNE</span>
+                <span className="font-display font-bold text-lg text-white">PUNE</span>
+                <span className="font-display font-bold text-lg text-amber-400 ml-1">VARSA</span>
+                <span className="text-[10px] ml-1.5 px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">AI</span>
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed text-xs">
@@ -61,7 +62,7 @@ function Footer({ onNavigate }) {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
-          <p>© 2026 Virasaat Pune • Smart India Hackathon Prototype. Crafted with pride for Maharashtra's cultural capital.</p>
+          <p>© 2026 Pune Varsa • Smart India Hackathon Prototype. Crafted with pride for Maharashtra's cultural capital.</p>
           <div className="flex items-center space-x-4">
             <span className="hover:text-slate-300">Privacy</span>
             <span>•</span>

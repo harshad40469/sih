@@ -1,9 +1,9 @@
 {
-  "name": "virasaat-pune-heritage-explorer",
+  "name": "pune-varsa-heritage-explorer",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AI-Powered Personalized Pune Heritage Explorer for Smart India Hackathon (SIH)",
+  "description": "Pune Varsa — AI-Powered Personalized Pune Heritage Explorer for Smart India Hackathon (SIH)",
   "scripts": {
     "dev": "npx -y serve . -l 3000",
     "start": "npx -y serve . -l 3000",
