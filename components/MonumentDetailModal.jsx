@@ -117,11 +117,9 @@ function MonumentDetailModal({
         <div className="relative aspect-[21/9] sm:aspect-[24/9] w-full overflow-hidden shrink-0">
           <img
             src={monument.heroImage || monument.image}
-            alt={monument.name}
+            alt={`${monument.name} (${monument.marathiName}) - Pune Heritage Monument`}
+            loading="lazy"
             className="w-full h-full object-cover brightness-90"
-            onError={(e) => {
-              e.target.src = 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80';
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
           

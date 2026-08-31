@@ -148,11 +148,9 @@ function MonumentGrid({
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <img
                         src={monument.image}
-                        alt={monument.name}
+                        alt={`${monument.name} (${monument.marathiName}) - Pune`}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
-                        onError={(e) => {
-                          e.target.src = 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80';
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                       

@@ -1,4 +1,4 @@
-// Comprehensive Pune Heritage Dataset
+// Comprehensive Pune Heritage Dataset with Local Real Photographs
 const PUNE_MONUMENTS = [
   {
     id: "shaniwar-wada",
@@ -11,11 +11,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 90,
     rating: 4.8,
     reviewsCount: "14.2k",
-    heroImage: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/shaniwar-wada.webp",
+    image: "./public/images/monuments/shaniwar-wada.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/shaniwar-wada.webp"
     ],
     tags: ["architecture", "history", "maratha", "photography", "educational"],
     shortDescription: "The 7-storey seat of the Peshwa rulers of the Maratha Empire, famed for its towering Dilli Darwaza and tragic historic legends.",
@@ -52,10 +51,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 120,
     rating: 4.7,
     reviewsCount: "11.8k",
-    heroImage: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/aga-khan-palace.webp",
+    image: "./public/images/monuments/aga-khan-palace.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/aga-khan-palace.webp"
     ],
     tags: ["architecture", "history", "educational", "photography", "family"],
     shortDescription: "A serene Italian-arched palace in Yerawada where Mahatma Gandhi, Kasturba Gandhi, and Sarojini Naidu were interned during the Quit India Movement.",
@@ -91,10 +90,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 210,
     rating: 4.9,
     reviewsCount: "25.6k",
-    heroImage: "https://images.unsplash.com/photo-1627894006066-b457865373a6?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1627894006066-b457865373a6?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/sinhagad-fort.webp",
+    image: "./public/images/monuments/sinhagad-fort.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1627894006066-b457865373a6?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/sinhagad-fort.webp"
     ],
     tags: ["maratha", "history", "photography", "architecture"],
     shortDescription: "The iconic mountain stronghold perched at 1,312 meters, immortalized by Tanaji Malusare's heroic 1670 battle where 'Gad aala, pan Sinha gela'.",
@@ -130,10 +129,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 45,
     rating: 4.6,
     reviewsCount: "8.4k",
-    heroImage: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/lal-mahal.webp",
+    image: "./public/images/monuments/lal-mahal.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/lal-mahal.webp"
     ],
     tags: ["maratha", "history", "educational", "family"],
     shortDescription: "The childhood home of Chhatrapati Shivaji Maharaj where he grew up under Rajmata Jijabai, and later executed the daring midnight raid on Shaista Khan.",
@@ -169,10 +168,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 60,
     rating: 4.6,
     reviewsCount: "9.1k",
-    heroImage: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/pataleshwar-cave-temple.webp",
+    image: "./public/images/monuments/pataleshwar-cave-temple.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/pataleshwar-cave-temple.webp"
     ],
     tags: ["architecture", "religious", "history", "photography"],
     shortDescription: "An 8th-century rock-cut monolithic subterranean temple carved out of a single basalt rock, dedicated to Lord Shiva with a grand circular Nandi mandapa.",
@@ -208,10 +207,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 120,
     rating: 4.7,
     reviewsCount: "7.9k",
-    heroImage: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/kelkar-museum.webp",
+    image: "./public/images/monuments/kelkar-museum.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/kelkar-museum.webp"
     ],
     tags: ["art", "educational", "history", "family", "architecture"],
     shortDescription: "A treasure trove of 20,000+ rare Indian artifacts, traditional musical instruments, Peshwa textiles, and the breathtaking reconstructed Mastani Mahal.",
@@ -247,10 +246,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 60,
     rating: 4.5,
     reviewsCount: "6.2k",
-    heroImage: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/vishrambaug-wada.webp",
+    image: "./public/images/monuments/vishrambaug-wada.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/vishrambaug-wada.webp"
     ],
     tags: ["architecture", "maratha", "history", "photography"],
     shortDescription: "A magnificent 3-storey mansion celebrated for its ornate wooden facade, handcrafted Suru (cypress tree) pillars, and late Peshwa royal opulence.",
@@ -286,10 +285,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 90,
     rating: 4.8,
     reviewsCount: "16.8k",
-    heroImage: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/parvati-hill.webp",
+    image: "./public/images/monuments/parvati-hill.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/parvati-hill.webp"
     ],
     tags: ["religious", "history", "photography", "maratha", "family"],
     shortDescription: "A scenic 103-step hillock complex overlooking all of Pune, holding historic Peshwa temples, Peshwa Museum, and the Samadhi of Nanasaheb Peshwa.",
@@ -325,10 +324,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 45,
     rating: 4.9,
     reviewsCount: "42.5k",
-    heroImage: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/dagdusheth-temple.webp",
+    image: "./public/images/monuments/dagdusheth-temple.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/dagdusheth-temple.webp"
     ],
     tags: ["religious", "art", "family", "history"],
     shortDescription: "One of Maharashtra's most revered shrines, famous for its 7.5-foot gold-adorned Ganesha idol and key role in Lokmanya Tilak's public Ganeshotsav.",
@@ -364,10 +363,10 @@ const PUNE_MONUMENTS = [
     durationMinutes: 60,
     rating: 4.6,
     reviewsCount: "5.3k",
-    heroImage: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    heroImage: "./public/images/monuments/shinde-chhatri.webp",
+    image: "./public/images/monuments/shinde-chhatri.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80"
+      "./public/images/monuments/shinde-chhatri.webp"
     ],
     tags: ["architecture", "photography", "maratha", "history"],
     shortDescription: "An Anglo-Rajasthani architectural marvel in Wanowrie dedicated to the great 18th-century Maratha military commander Mahadji Shinde.",

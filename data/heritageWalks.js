@@ -1,4 +1,4 @@
-// Curated Pune Heritage Trails & Itineraries
+// Curated Pune Heritage Trails & Itineraries with Local Real Images
 const HERITAGE_WALKS = [
   {
     id: "peshwa-trail-2hr",
@@ -9,7 +9,7 @@ const HERITAGE_WALKS = [
     distanceKm: "1.8 km",
     locationsCount: 4,
     idealFor: ["Maratha Heritage", "History Buffs", "Architecture"],
-    coverImage: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80",
+    coverImage: "./public/images/monuments/shaniwar-wada.webp",
     themeColor: "from-amber-600 to-orange-700",
     summary: "Walk through the golden era of the 18th-century Peshwas, starting at young Shivaji's home, moving to the fortress of Shaniwar Wada, paying respects at Dagdusheth, and concluding at the wooden palace of Vishrambaug.",
     stops: [
@@ -56,7 +56,7 @@ const HERITAGE_WALKS = [
     distanceKm: "0.8 km",
     locationsCount: 2,
     idealFor: ["Architecture", "Photography", "Quick Visit"],
-    coverImage: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80",
+    coverImage: "./public/images/monuments/pataleshwar-cave-temple.webp",
     themeColor: "from-emerald-700 to-teal-800",
     summary: "Perfect for travelers with limited time who want to touch 1,200 years of living history right in central Pune.",
     stops: [
@@ -87,7 +87,7 @@ const HERITAGE_WALKS = [
     distanceKm: "12 km (Cab + Walk)",
     locationsCount: 3,
     idealFor: ["History", "Educational", "Family Friendly"],
-    coverImage: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+    coverImage: "./public/images/monuments/aga-khan-palace.webp",
     themeColor: "from-blue-700 to-indigo-900",
     summary: "A journey bridging the Quit India Movement at Aga Khan Palace, the cenotaph of Mahadji Shinde in Wanowrie, and the panoramic views atop Parvati Hill.",
     stops: [
@@ -126,7 +126,7 @@ const HERITAGE_WALKS = [
     distanceKm: "35 km (Vehicle + Trek)",
     locationsCount: 4,
     idealFor: ["Maratha Heritage", "Trekking & Adventure", "Photography"],
-    coverImage: "https://images.unsplash.com/photo-1627894006066-b457865373a6?auto=format&fit=crop&w=800&q=80",
+    coverImage: "./public/images/monuments/sinhagad-fort.webp",
     themeColor: "from-amber-700 to-red-900",
     summary: "Conquer the historic Sinhagad fortress in the morning mist, feast on authentic pitla bhakri, and explore the classic wadas of old Pune in the afternoon.",
     stops: [

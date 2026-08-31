@@ -90,7 +90,8 @@ function MyJourneyDrawer({
                     </span>
                     <img
                       src={monument.image}
-                      alt={monument.name}
+                      alt={`${monument.name} thumbnail`}
+                      loading="lazy"
                       className="w-12 h-12 rounded-xl object-cover shrink-0"
                     />
                     <div className="min-w-0">
