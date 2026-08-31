@@ -78,7 +78,7 @@ function Hero({ onExploreClick, onPlanWalkClick, onStartPersonalize }) {
               <div className="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/30 shadow-2xl group">
                 <div className="aspect-[4/3] w-full relative overflow-hidden">
                   <img
-                    src="./public/images/monuments/shaniwar-wada.webp"
+                    src="/images/monuments/shaniwar-wada.webp"
                     alt="Shaniwar Wada - Delhi Gate Pune"
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"

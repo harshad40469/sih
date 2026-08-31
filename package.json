@@ -6,6 +6,7 @@
   "description": "AI-Powered Personalized Pune Heritage Explorer for Smart India Hackathon (SIH)",
   "scripts": {
     "dev": "npx -y serve . -l 3000",
+    "build": "echo 'Static web application ready for Vercel/production'",
     "start": "npx -y serve . -l 3000",
     "serve": "npx -y serve . -l 3000"
   },
