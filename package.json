@@ -1,0 +1,23 @@
+{
+  "name": "virasaat-pune-heritage-explorer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-Powered Personalized Pune Heritage Explorer for Smart India Hackathon (SIH)",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000",
+    "serve": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "pune",
+    "heritage",
+    "sih",
+    "smart-india-hackathon",
+    "ai-travel",
+    "maratha-history",
+    "tourism"
+  ],
+  "author": "SIH Team",
+  "license": "MIT"
+}

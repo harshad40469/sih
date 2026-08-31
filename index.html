@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virasaat Pune • AI-Powered Personalized Heritage Explorer (SIH)</title>
+  <meta name="description" content="Discover Pune beyond the guidebook with an AI-powered personalized heritage explorer. Custom walking trails, stories that connect, and smart recommendations." />
+  
+  <!-- Favicon icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
+
+  <!-- Google Fonts: Cinzel & Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN with customized heritage config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            heritage: {
+              gold: '#D97706',
+              saffron: '#EA580C',
+              terracotta: '#9A3412',
+              charcoal: '#090D16',
+              cream: '#FAF7F2'
+            }
+          },
+          animation: {
+            'fadeIn': 'fadeIn 0.3s ease-out forwards',
+            'slideLeft': 'slideLeft 0.3s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideLeft: {
+              '0%': { transform: 'translateX(100%)' },
+              '100%': { transform: 'translateX(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./styles/main.css" />
+
+  <!-- Canvas Confetti Library for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- React 18 & ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel Standalone for JSX transformation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-[#090D16] text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- React Root Container -->
+  <div id="root"></div>
+
+  <!-- Load Data Files -->
+  <script src="./data/monuments.js"></script>
+  <script src="./data/heritageWalks.js"></script>
+  <script src="./data/aiKnowledge.js"></script>
+
+  <!-- Load Components with Babel -->
+  <script type="text/babel" src="./components/Navbar.jsx"></script>
+  <script type="text/babel" src="./components/Hero.jsx"></script>
+  <script type="text/babel" src="./components/PersonalizationSection.jsx"></script>
+  <script type="text/babel" src="./components/RecommendedSection.jsx"></script>
+  <script type="text/babel" src="./components/MonumentGrid.jsx"></script>
+  <script type="text/babel" src="./components/MonumentDetailModal.jsx"></script>
+  <script type="text/babel" src="./components/HeritageWalkSection.jsx"></script>
+  <script type="text/babel" src="./components/FloatingAIAssistant.jsx"></script>
+  <script type="text/babel" src="./components/MyJourneyDrawer.jsx"></script>
+  <script type="text/babel" src="./components/SIHDemoModal.jsx"></script>
+  <script type="text/babel" src="./components/FeaturesSection.jsx"></script>
+  <script type="text/babel" src="./components/Footer.jsx"></script>
+  
+  <!-- Master App -->
+  <script type="text/babel" src="./App.jsx"></script>
+
+  <!-- Render React Root -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  </script>
+
+</body>
+</html>
