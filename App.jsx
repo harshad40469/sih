@@ -22,6 +22,19 @@ function App() {
   const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState('explore');
 
+  // Modal scroll lock for smooth backdrop interaction
+  React.useEffect(() => {
+    const isAnyModalOpen = Boolean(selectedMonument || isDemoModalOpen || isJourneyDrawerOpen);
+    if (isAnyModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedMonument, isDemoModalOpen, isJourneyDrawerOpen]);
+
   // Add / Remove from My Journey
   const handleToggleJourney = (monument) => {
     const exists = journeyItems.some(item => item.id === monument.id);

@@ -57,7 +57,7 @@ function PersonalizationSection({
   };
 
   return (
-    <section id="personalize" className="py-20 relative bg-[#0B101D] border-t border-slate-800">
+    <section id="personalize" className="py-20 relative bg-[#0B101D] border-t border-slate-800/80">
       
       {/* Background ambient accents */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -67,7 +67,7 @@ function PersonalizationSection({
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold shadow-sm">
             <span>✨ AI PERSONALIZATION ENGINE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
@@ -85,37 +85,43 @@ function PersonalizationSection({
           <div className="grid grid-cols-3 gap-3 mb-10 pb-6 border-b border-slate-800">
             <button
               onClick={() => setCurrentStep(1)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 1 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 shadow-md shadow-amber-500/10' 
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">1</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 1 ? 'bg-amber-400 text-slate-950 scale-110' : 'bg-amber-500/30 text-amber-300'
+              }`}>1</span>
               <span className="font-semibold text-xs sm:text-sm">Interests ({selectedInterests.length})</span>
             </button>
 
             <button
               onClick={() => setCurrentStep(2)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 2 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 shadow-md shadow-amber-500/10' 
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">2</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 2 ? 'bg-amber-400 text-slate-950 scale-110' : 'bg-amber-500/30 text-amber-300'
+              }`}>2</span>
               <span className="font-semibold text-xs sm:text-sm">Time Window</span>
             </button>
 
             <button
               onClick={() => setCurrentStep(3)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 3 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 shadow-md shadow-amber-500/10' 
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">3</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 3 ? 'bg-amber-400 text-slate-950 scale-110' : 'bg-amber-500/30 text-amber-300'
+              }`}>3</span>
               <span className="font-semibold text-xs sm:text-sm">Exploration Style</span>
             </button>
           </div>
@@ -127,14 +133,14 @@ function PersonalizationSection({
                 <div>
                   <h3 className="text-xl font-bold text-white flex items-center space-x-2">
                     <span>What are you interested in?</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">Multi-select</span>
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">Multi-select</span>
                   </h3>
                   <p className="text-xs text-slate-400">Choose one or more areas that excite you most.</p>
                 </div>
                 {selectedInterests.length > 0 && (
                   <button
                     onClick={() => setSelectedInterests([])}
-                    className="text-xs text-slate-400 hover:text-amber-400 underline self-start sm:self-auto"
+                    className="text-xs text-slate-400 hover:text-amber-400 underline self-start sm:self-auto transition-colors"
                   >
                     Clear selection
                   </button>
@@ -142,28 +148,28 @@ function PersonalizationSection({
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {interestOptions.map((opt) => {
+                {interestOptions.map((opt, oIdx) => {
                   const isSelected = selectedInterests.includes(opt.id);
                   return (
                     <div
                       key={opt.id}
                       onClick={() => toggleInterest(opt.id)}
-                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border flex flex-col justify-between ${
+                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 border flex flex-col justify-between btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
+                          ? 'bg-gradient-to-br from-amber-500/30 via-orange-500/15 to-slate-900/90 border-amber-500 shadow-xl shadow-amber-950/50 scale-[1.02]'
                           : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
                       }`}
                     >
                       <div className="flex items-start justify-between">
-                        <span className="text-3xl">{opt.icon}</span>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                          isSelected ? 'bg-amber-400 text-slate-950' : 'border border-slate-700 text-transparent'
+                        <span className="text-3xl transition-transform group-hover:scale-110">{opt.icon}</span>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+                          isSelected ? 'bg-amber-400 text-slate-950 scale-110 shadow-md shadow-amber-500/40' : 'border border-slate-700 text-transparent'
                         }`}>
                           ✓
                         </div>
                       </div>
                       <div className="mt-3">
-                        <h4 className={`font-semibold text-sm ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
+                        <h4 className={`font-semibold text-sm transition-colors ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
                           {opt.label}
                         </h4>
                         <p className="text-[11px] text-slate-400 mt-1 leading-snug">
@@ -178,7 +184,7 @@ function PersonalizationSection({
               <div className="flex justify-end pt-4">
                 <button
                   onClick={() => setCurrentStep(2)}
-                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 hover:brightness-110"
+                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 btn-interactive btn-shimmer"
                 >
                   <span>Next: Choose Time</span>
                   <span>→</span>
@@ -202,24 +208,24 @@ function PersonalizationSection({
                     <div
                       key={opt.id}
                       onClick={() => setSelectedTime(opt.id)}
-                      className={`p-5 rounded-2xl cursor-pointer transition-all duration-200 border flex flex-col justify-between ${
+                      className={`p-5 rounded-2xl cursor-pointer transition-all duration-300 border flex flex-col justify-between btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
+                          ? 'bg-gradient-to-br from-amber-500/30 via-orange-500/15 to-slate-900/90 border-amber-500 shadow-xl shadow-amber-950/50 scale-[1.02]'
                           : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700">
+                        <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-800 text-amber-400 border border-slate-700">
                           {opt.badge}
                         </span>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                          isSelected ? 'bg-amber-400 text-slate-950' : 'border border-slate-700 text-transparent'
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+                          isSelected ? 'bg-amber-400 text-slate-950 scale-110 shadow-md shadow-amber-500/40' : 'border border-slate-700 text-transparent'
                         }`}>
                           ✓
                         </div>
                       </div>
                       <div className="mt-4">
-                        <h4 className={`text-lg font-bold ${isSelected ? 'text-amber-300' : 'text-slate-100'}`}>
+                        <h4 className={`text-lg font-bold transition-colors ${isSelected ? 'text-amber-300' : 'text-slate-100'}`}>
                           {opt.label}
                         </h4>
                         <p className="text-xs text-slate-400 mt-1">{opt.desc}</p>
@@ -232,13 +238,13 @@ function PersonalizationSection({
               <div className="flex justify-between pt-4">
                 <button
                   onClick={() => setCurrentStep(1)}
-                  className="px-5 py-2.5 rounded-xl glass-pill text-slate-300 hover:text-white text-sm"
+                  className="px-5 py-2.5 rounded-xl glass-pill text-slate-300 hover:text-white text-sm btn-interactive"
                 >
                   ← Back to Interests
                 </button>
                 <button
                   onClick={() => setCurrentStep(3)}
-                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 hover:brightness-110"
+                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 btn-interactive btn-shimmer"
                 >
                   <span>Next: Exploration Style</span>
                   <span>→</span>
@@ -262,19 +268,19 @@ function PersonalizationSection({
                     <div
                       key={opt.id}
                       onClick={() => setSelectedStyle(opt.id)}
-                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border flex items-start space-x-3 ${
+                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 border flex items-start space-x-3 btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
+                          ? 'bg-gradient-to-br from-amber-500/30 via-orange-500/15 to-slate-900/90 border-amber-500 shadow-xl shadow-amber-950/50 scale-[1.02]'
                           : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
                       }`}
                     >
                       <span className="text-2xl">{opt.icon}</span>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <h4 className={`font-semibold text-sm ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
+                          <h4 className={`font-semibold text-sm transition-colors ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
                             {opt.label}
                           </h4>
-                          {isSelected && <span className="text-amber-400 font-bold text-xs">✓</span>}
+                          {isSelected && <span className="text-amber-400 font-bold text-xs animate-bounce">✓</span>}
                         </div>
                         <p className="text-[11px] text-slate-400 mt-1">{opt.desc}</p>
                       </div>
@@ -284,9 +290,9 @@ function PersonalizationSection({
               </div>
 
               {/* Action Banner */}
-              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 shadow-lg shadow-amber-950/30">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0 shadow-sm">
                     ⚡
                   </div>
                   <div>
@@ -300,13 +306,13 @@ function PersonalizationSection({
                 <div className="flex items-center space-x-3 w-full sm:w-auto">
                   <button
                     onClick={() => setCurrentStep(2)}
-                    className="px-4 py-2.5 rounded-xl glass-pill text-slate-300 text-xs hover:text-white"
+                    className="px-4 py-2.5 rounded-xl glass-pill text-slate-300 text-xs hover:text-white btn-interactive"
                   >
                     ← Back
                   </button>
                   <button
                     onClick={handleGenerate}
-                    className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm shadow-xl shadow-amber-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2"
+                    className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm shadow-xl shadow-amber-500/30 btn-interactive btn-shimmer flex items-center justify-center space-x-2"
                   >
                     <span>Generate Recommendations</span>
                     <span>✨</span>
@@ -325,3 +331,4 @@ function PersonalizationSection({
 }
 
 window.PersonalizationSection = PersonalizationSection;
+

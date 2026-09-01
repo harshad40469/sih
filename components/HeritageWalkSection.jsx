@@ -10,7 +10,7 @@ function HeritageWalkSection({
   const activeWalk = walks.find(w => w.id === selectedWalkId) || walks[0];
 
   return (
-    <section id="walks" className="py-20 bg-[#090E1A] relative border-t border-slate-800">
+    <section id="walks" className="py-20 bg-[#090E1A] relative border-t border-slate-800/80">
       
       {/* Glow */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
@@ -19,7 +19,7 @@ function HeritageWalkSection({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold shadow-sm">
             <span>🗺️ SMART ITINERARY PLANNER</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
@@ -39,7 +39,7 @@ function HeritageWalkSection({
                 setSelectedWalkId(walk.id);
                 setActiveStopIndex(0);
               }}
-              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all shrink-0 flex items-center space-x-2 ${
+              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all shrink-0 flex items-center space-x-2 btn-interactive ${
                 selectedWalkId === walk.id
                   ? 'bg-gold-gradient text-slate-950 shadow-lg shadow-amber-500/25 scale-[1.02]'
                   : 'glass-panel text-slate-300 hover:text-white border-slate-800'
@@ -63,7 +63,7 @@ function HeritageWalkSection({
             {/* Trail Overview Card */}
             <div className="glass-panel p-6 rounded-3xl border border-amber-500/25 shadow-xl space-y-5">
               <div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-sm">
                   {activeWalk.durationBadge}
                 </span>
                 <h3 className="font-display text-2xl font-bold text-white mt-3">
@@ -76,28 +76,28 @@ function HeritageWalkSection({
 
               {/* 3 Metric Pills */}
               <div className="grid grid-cols-3 gap-3 pt-2">
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center shadow-sm">
                   <p className="text-[10px] text-slate-400 font-semibold uppercase">Total Time</p>
                   <p className="text-sm font-bold text-amber-400 mt-0.5">{activeWalk.durationBadge}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center shadow-sm">
                   <p className="text-[10px] text-slate-400 font-semibold uppercase">Distance</p>
                   <p className="text-sm font-bold text-emerald-400 mt-0.5">{activeWalk.distanceKm}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-center shadow-sm">
                   <p className="text-[10px] text-slate-400 font-semibold uppercase">Locations</p>
                   <p className="text-sm font-bold text-white mt-0.5">{activeWalk.locationsCount} Stops</p>
                 </div>
               </div>
 
               {/* Stylized Visual Route Map (SVG) */}
-              <div className="relative rounded-2xl bg-slate-950 p-4 border border-slate-800 overflow-hidden">
+              <div className="relative rounded-2xl bg-slate-950 p-4 border border-slate-800 overflow-hidden shadow-inner">
                 <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
                   <span className="font-bold text-amber-400 flex items-center space-x-1.5">
                     <span>📍</span>
                     <span>Interactive Route Trail Visualization</span>
                   </span>
-                  <span className="text-[10px] text-slate-500">Live Elevation & Waypoints</span>
+                  <span className="text-[10px] text-slate-500">Live Waypoints</span>
                 </div>
 
                 <div className="relative h-44 w-full flex items-center justify-center">
@@ -105,13 +105,14 @@ function HeritageWalkSection({
                     {/* Background Grid Lines */}
                     <path d="M10 40 H390 M10 80 H390 M10 120 H390" stroke="#1E293B" strokeWidth="0.75" strokeDasharray="4 4" />
                     
-                    {/* Connecting Trail Line */}
+                    {/* Connecting Trail Glow Line */}
                     <path
                       d="M 50 110 C 120 40, 160 130, 240 60 C 290 20, 330 110, 360 80"
                       stroke="url(#routeGradient)"
-                      strokeWidth="4"
+                      strokeWidth="5"
                       strokeLinecap="round"
                       fill="none"
+                      className="animate-route-path"
                     />
 
                     <defs>
@@ -137,10 +138,10 @@ function HeritageWalkSection({
                         <g 
                           key={idx} 
                           onClick={() => setActiveStopIndex(idx)}
-                          className="cursor-pointer"
+                          className="cursor-pointer group"
                         >
                           {isActive && (
-                            <circle cx={pos.x} cy={pos.y} r="14" fill="#F59E0B" fillOpacity="0.2" className="animate-ping" />
+                            <circle cx={pos.x} cy={pos.y} r="16" fill="#F59E0B" fillOpacity="0.25" className="animate-ping" />
                           )}
                           <circle
                             cx={pos.x}
@@ -149,14 +150,16 @@ function HeritageWalkSection({
                             fill={isActive ? "#F59E0B" : "#1E293B"}
                             stroke={isActive ? "#FFFFFF" : "#F59E0B"}
                             strokeWidth="2.5"
+                            className="transition-all duration-300"
                           />
                           <text
                             x={pos.x}
-                            y={pos.y - 12}
+                            y={pos.y - 14}
                             textAnchor="middle"
                             fill={isActive ? "#FDE68A" : "#94A3B8"}
                             fontSize="10"
-                            fontWeight="bold"
+                            fontWeight={isActive ? "bold" : "normal"}
+                            className="transition-all"
                           >
                             Stop {stop.order}
                           </text>
@@ -185,7 +188,7 @@ function HeritageWalkSection({
 
               <button
                 onClick={onOpenMyJourney}
-                className="text-xs px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 font-semibold transition-all"
+                className="text-xs px-3.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 font-semibold btn-interactive transition-all"
               >
                 + Customize in My Journey
               </button>
@@ -204,9 +207,9 @@ function HeritageWalkSection({
                   <div
                     key={idx}
                     onClick={() => setActiveStopIndex(idx)}
-                    className={`relative pl-14 p-5 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                    className={`relative pl-14 p-5 rounded-2xl cursor-pointer transition-all duration-300 border btn-interactive ${
                       isActive
-                        ? 'glass-panel bg-slate-900/90 border-amber-500/60 shadow-xl shadow-amber-950/40 scale-[1.01]'
+                        ? 'glass-panel bg-slate-900/95 border-amber-500/60 shadow-xl shadow-amber-950/40 scale-[1.01]'
                         : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/50'
                     }`}
                   >
@@ -222,7 +225,7 @@ function HeritageWalkSection({
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div>
                         <div className="flex items-center space-x-2">
-                          <h5 className={`font-display text-lg font-bold ${isActive ? 'text-amber-300' : 'text-white'}`}>
+                          <h5 className={`font-display text-lg font-bold transition-colors ${isActive ? 'text-amber-300' : 'text-white'}`}>
                             {stop.name}
                           </h5>
                           <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-amber-400 font-semibold">
@@ -241,7 +244,7 @@ function HeritageWalkSection({
                             e.stopPropagation();
                             onSelectMonumentById(stop.monumentId);
                           }}
-                          className="self-start sm:self-auto text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-amber-500 text-slate-300 hover:text-slate-950 font-bold border border-slate-700 transition-all shrink-0"
+                          className="self-start sm:self-auto text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-amber-500 text-slate-300 hover:text-slate-950 font-bold border border-slate-700 transition-all shrink-0 btn-interactive"
                         >
                           View Site →
                         </button>
@@ -271,3 +274,4 @@ function HeritageWalkSection({
 }
 
 window.HeritageWalkSection = HeritageWalkSection;
+

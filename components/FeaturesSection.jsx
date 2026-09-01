@@ -30,7 +30,7 @@ function FeaturesSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold shadow-sm">
             <span>STARTUP INNOVATION</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
@@ -46,17 +46,17 @@ function FeaturesSection() {
           {features.map((item, idx) => (
             <div
               key={idx}
-              className="glass-panel glass-panel-hover p-8 rounded-3xl border border-slate-800 flex flex-col justify-between relative overflow-hidden group"
+              className={`glass-panel glass-panel-hover p-8 rounded-3xl border border-slate-800/90 flex flex-col justify-between relative overflow-hidden group shadow-xl hover:border-amber-500/40 stagger-${idx + 1}`}
             >
               {/* Subtle gradient corner glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all duration-500 pointer-events-none" />
 
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-orange-500/10 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-orange-500/10 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md">
                     {item.icon}
                   </div>
-                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-slate-700">
+                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-slate-700 shadow-sm">
                     {item.badge}
                   </span>
                 </div>
@@ -89,3 +89,4 @@ function FeaturesSection() {
 }
 
 window.FeaturesSection = FeaturesSection;
+

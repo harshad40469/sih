@@ -43,7 +43,7 @@ function MonumentGrid({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold shadow-sm">
             <span>PUNE HERITAGE REPOSITORY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
@@ -55,27 +55,28 @@ function MonumentGrid({
         </div>
 
         {/* Search Bar & Category Filters Container */}
-        <div className="glass-panel p-4 sm:p-6 rounded-3xl border border-slate-800 mb-10 space-y-4">
+        <div className="glass-panel p-4 sm:p-6 rounded-3xl border border-slate-800/90 mb-10 space-y-4 shadow-xl">
           
           {/* Top Row: Search and Sort */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             
             {/* Search Input */}
-            <div className="relative w-full sm:max-w-md">
+            <div className="relative w-full sm:max-w-md group">
               <input
                 type="text"
                 placeholder="Search monuments, eras, Maratha history..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-900/90 border border-slate-700 rounded-2xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-all shadow-inner"
+                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-2xl pl-11 pr-10 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-all shadow-inner"
               />
-              <svg className="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-slate-400 group-focus-within:text-amber-400 transition-colors absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 rounded-full hover:bg-slate-800 text-xs transition-colors"
+                  aria-label="Clear search"
                 >
                   ✕
                 </button>
@@ -88,7 +89,7 @@ function MonumentGrid({
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-200 focus:outline-none focus:border-amber-500"
+                className="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-200 focus:outline-none focus:border-amber-500 transition-colors cursor-pointer"
               >
                 <option value="featured">Featured (Default)</option>
                 <option value="rating">Highest Rated ★</option>
@@ -105,9 +106,9 @@ function MonumentGrid({
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shrink-0 ${
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shrink-0 btn-interactive ${
                   selectedCategory === cat
-                    ? 'bg-gold-gradient text-slate-950 shadow-md shadow-amber-500/20'
+                    ? 'bg-gold-gradient text-slate-950 shadow-md shadow-amber-500/20 font-bold'
                     : 'bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
                 }`}
               >
@@ -120,58 +121,58 @@ function MonumentGrid({
 
         {/* Monument Grid */}
         {filteredMonuments.length === 0 ? (
-          <div className="glass-panel p-12 rounded-3xl text-center border border-slate-800 space-y-4">
-            <p className="text-4xl">🔍</p>
+          <div className="glass-panel p-12 rounded-3xl text-center border border-slate-800 space-y-4 animate-fadeIn">
+            <p className="text-4xl animate-bounce">🔍</p>
             <h3 className="text-lg font-bold text-white">No monuments found</h3>
             <p className="text-xs text-slate-400 max-w-sm mx-auto">
               We couldn't find any monuments matching "{searchQuery}". Try resetting filters or searching for "Fort", "Peshwa", or "Shivaji".
             </p>
             <button
               onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-              className="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold"
+              className="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold btn-interactive hover:bg-amber-500 hover:text-slate-950"
             >
               Reset Filters
             </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredMonuments.map((monument) => {
+            {filteredMonuments.map((monument, idx) => {
               const isSaved = journeyIds.includes(monument.id);
 
               return (
                 <div
                   key={monument.id}
-                  className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-slate-800/80 flex flex-col justify-between group shadow-xl"
+                  className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-slate-800/80 flex flex-col justify-between group shadow-xl transition-all duration-300 hover:border-amber-500/40"
                 >
                   <div>
-                    {/* Image Area */}
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    {/* Image Area with 3-5% Zoom */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
                       <img
                         src={monument.image}
                         alt={`${monument.name} (${monument.marathiName}) - Pune`}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
                       
                       {/* Top Badges */}
-                      <div className="absolute top-3 left-3 glass-pill px-2.5 py-1 rounded-full text-xs font-semibold text-amber-300 border border-amber-400/30">
+                      <div className="absolute top-3 left-3 glass-pill px-2.5 py-1 rounded-full text-xs font-semibold text-amber-300 border border-amber-400/30 shadow-sm">
                         {monument.category}
                       </div>
 
-                      <div className="absolute top-3 right-3 glass-pill px-2.5 py-1 rounded-full text-xs font-bold text-amber-400 border border-slate-700 flex items-center space-x-1">
+                      <div className="absolute top-3 right-3 glass-pill px-2.5 py-1 rounded-full text-xs font-bold text-amber-400 border border-slate-700 flex items-center space-x-1 shadow-sm">
                         <span>★</span>
                         <span>{monument.rating}</span>
                       </div>
 
                       {/* Bottom Info inside image */}
                       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-slate-300">
-                        <span className="glass-pill px-2 py-0.5 rounded text-[11px] flex items-center space-x-1">
+                        <span className="glass-pill px-2 py-0.5 rounded text-[11px] flex items-center space-x-1 shadow-sm">
                           <span>⏱️</span>
                           <span>{monument.estimatedDuration}</span>
                         </span>
 
-                        <span className="glass-pill px-2 py-0.5 rounded text-[11px] text-amber-300 border border-amber-500/30">
+                        <span className="glass-pill px-2 py-0.5 rounded text-[11px] text-amber-300 border border-amber-500/30 shadow-sm">
                           {monument.period}
                         </span>
                       </div>
@@ -193,7 +194,7 @@ function MonumentGrid({
                       {/* Tag chips */}
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {monument.tags.slice(0, 3).map((tag, tIdx) => (
-                          <span key={tIdx} className="text-[10px] px-2 py-0.5 rounded-md bg-slate-900 text-slate-400 border border-slate-800">
+                          <span key={tIdx} className="text-[10px] px-2 py-0.5 rounded-md bg-slate-900 text-slate-400 border border-slate-800 transition-colors group-hover:border-slate-700">
                             #{tag}
                           </span>
                         ))}
@@ -205,17 +206,17 @@ function MonumentGrid({
                   <div className="p-6 pt-0 flex items-center space-x-2 border-t border-slate-800/60 mt-2">
                     <button
                       onClick={() => onSelectMonument(monument)}
-                      className="flex-1 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 hover:brightness-110 transition-all flex items-center justify-center space-x-1.5"
+                      className="flex-1 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 btn-interactive btn-shimmer transition-all flex items-center justify-center space-x-1.5"
                     >
                       <span>Explore Place</span>
-                      <span>→</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
 
                     <button
                       onClick={() => onAddToJourney(monument)}
-                      className={`p-3 rounded-xl border transition-all ${
+                      className={`p-3 rounded-xl border transition-all btn-interactive ${
                         isSaved
-                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40'
+                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-500/20'
                           : 'glass-pill text-slate-300 hover:text-amber-400 hover:border-amber-500/40'
                       }`}
                       title={isSaved ? "Remove from My Journey" : "Save to My Journey"}
@@ -244,3 +245,4 @@ function MonumentGrid({
 }
 
 window.MonumentGrid = MonumentGrid;
+

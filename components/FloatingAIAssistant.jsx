@@ -63,21 +63,21 @@ function FloatingAIAssistant({
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={onToggle}
-          className="relative group p-4 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-400 text-slate-950 shadow-2xl shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all flex items-center space-x-2.5 font-bold"
+          className="relative group p-4 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-400 text-slate-950 shadow-2xl shadow-amber-500/40 btn-interactive btn-shimmer flex items-center space-x-2.5 font-bold"
           aria-label="Open AI Heritage Assistant"
         >
           {/* Animated ping ring */}
           <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-slate-950 animate-ping" />
           <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-slate-950" />
 
-          <span className="text-xl">🤖</span>
+          <span className="text-xl group-hover:rotate-12 transition-transform">🤖</span>
           <span className="text-xs tracking-wide hidden sm:inline font-extrabold text-slate-950">Ask Punya AI</span>
         </button>
       </div>
 
       {/* Floating Chat Modal / Drawer */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-slate-900/95 backdrop-blur-2xl border border-amber-500/30 rounded-3xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden animate-fadeIn">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-slate-900/95 backdrop-blur-2xl border border-amber-500/30 rounded-3xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden animate-modal-in">
           
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800 flex items-center justify-between">
@@ -98,21 +98,22 @@ function FloatingAIAssistant({
 
             <button
               onClick={onToggle}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 btn-interactive"
+              aria-label="Close Assistant"
             >
               ✕
             </button>
           </div>
 
           {/* Chat Messages Body */}
-          <div className="p-4 flex-1 overflow-y-auto space-y-4 max-h-[380px] bg-slate-950/60">
+          <div className="p-4 flex-1 overflow-y-auto space-y-4 max-h-[380px] bg-slate-950/60 shadow-inner">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
-                className={`flex items-start space-x-2 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex items-start space-x-2 animate-fadeIn ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'ai' && (
-                  <div className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-bold text-[10px] flex items-center justify-center shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-bold text-[10px] flex items-center justify-center shrink-0 mt-1 shadow-sm">
                     AI
                   </div>
                 )}
@@ -140,7 +141,7 @@ function FloatingAIAssistant({
                             onClick={() => {
                               onSelectMonumentById(mId);
                             }}
-                            className="text-[11px] px-2.5 py-1 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/30 font-semibold transition-all flex items-center space-x-1"
+                            className="text-[11px] px-2.5 py-1 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/30 font-semibold btn-interactive transition-all flex items-center space-x-1 shadow-sm"
                           >
                             <span>🏛️</span>
                             <span>{mon.name}</span>
@@ -155,7 +156,7 @@ function FloatingAIAssistant({
             ))}
 
             {isTyping && (
-              <div className="flex items-center space-x-2 text-xs text-amber-400 pl-8">
+              <div className="flex items-center space-x-2 text-xs text-amber-400 pl-8 animate-pulse">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce" />
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce delay-100" />
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce delay-200" />
@@ -171,7 +172,7 @@ function FloatingAIAssistant({
               <button
                 key={qIdx}
                 onClick={() => handleSendMessage(q)}
-                className="text-[10px] px-2.5 py-1 rounded-full bg-slate-950 text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 border border-slate-800 shrink-0 transition-colors"
+                className="text-[10px] px-2.5 py-1 rounded-full bg-slate-950 text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 border border-slate-800 shrink-0 btn-interactive transition-colors"
               >
                 "{q}"
               </button>
@@ -186,11 +187,11 @@ function FloatingAIAssistant({
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-              className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+              className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 shadow-inner"
             />
             <button
               onClick={() => handleSendMessage()}
-              className="p-2 rounded-xl bg-gold-gradient text-slate-950 hover:brightness-110 font-bold"
+              className="p-2 rounded-xl bg-gold-gradient text-slate-950 btn-interactive btn-shimmer font-bold"
               aria-label="Send Message"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,3 +207,4 @@ function FloatingAIAssistant({
 }
 
 window.FloatingAIAssistant = FloatingAIAssistant;
+
