@@ -117,6 +117,7 @@ function RecommendedSection({
             return (
               <div
                 key={monument.id}
+                data-tilt="true"
                 className={`glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-amber-500/20 flex flex-col justify-between group shadow-xl transition-all duration-300 hover:border-amber-400/50 stagger-${mIdx + 1}`}
               >
                 <div>

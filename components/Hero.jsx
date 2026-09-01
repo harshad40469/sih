@@ -35,7 +35,7 @@ function Hero({ onExploreClick, onPlanWalkClick, onStartPersonalize }) {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
               <button
                 onClick={onStartPersonalize}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-gradient text-slate-950 font-bold text-base shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 btn-interactive btn-shimmer flex items-center justify-center space-x-2.5 group"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-gradient text-slate-950 font-bold text-base shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 btn-interactive btn-shimmer btn-magnetic flex items-center justify-center space-x-2.5 group"
               >
                 <span>✨ Explore Pune</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ function Hero({ onExploreClick, onPlanWalkClick, onStartPersonalize }) {
 
               <button
                 onClick={onPlanWalkClick}
-                className="w-full sm:w-auto px-7 py-4 rounded-xl glass-panel text-amber-300 font-semibold text-base border border-amber-500/30 hover:border-amber-400 hover:bg-slate-800/80 hover:text-white btn-interactive flex items-center justify-center space-x-2"
+                className="w-full sm:w-auto px-7 py-4 rounded-xl glass-panel text-amber-300 font-semibold text-base border border-amber-500/30 hover:border-amber-400 hover:bg-slate-800/80 hover:text-white btn-interactive btn-magnetic flex items-center justify-center space-x-2"
               >
                 <svg className="w-5 h-5 text-amber-400 group-hover:rotate-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -76,8 +76,8 @@ function Hero({ onExploreClick, onPlanWalkClick, onStartPersonalize }) {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Main Monument Hero Card */}
-              <div className="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/30 shadow-2xl group transition-all duration-500 hover:border-amber-400/60 hover:shadow-amber-500/20">
+              {/* Main Monument Hero Card with 3D Tilt */}
+              <div data-tilt="true" className="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/30 shadow-2xl group transition-all duration-500 hover:border-amber-400/60 hover:shadow-amber-500/20">
                 <div className="aspect-[4/3] w-full relative overflow-hidden bg-slate-950">
                   <img
                     src="/images/monuments/shaniwar-wada.webp"

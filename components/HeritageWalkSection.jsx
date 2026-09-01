@@ -188,7 +188,7 @@ function HeritageWalkSection({
 
               <button
                 onClick={onOpenMyJourney}
-                className="text-xs px-3.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 font-semibold btn-interactive transition-all"
+                className="text-xs px-3.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 font-semibold btn-interactive btn-magnetic transition-all"
               >
                 + Customize in My Journey
               </button>

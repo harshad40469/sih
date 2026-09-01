@@ -63,7 +63,7 @@ function FloatingAIAssistant({
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={onToggle}
-          className="relative group p-4 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-400 text-slate-950 shadow-2xl shadow-amber-500/40 btn-interactive btn-shimmer flex items-center space-x-2.5 font-bold"
+          className="relative group p-4 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-400 text-slate-950 shadow-2xl shadow-amber-500/40 btn-interactive btn-shimmer btn-magnetic flex items-center space-x-2.5 font-bold"
           aria-label="Open AI Heritage Assistant"
         >
           {/* Animated ping ring */}
@@ -77,7 +77,7 @@ function FloatingAIAssistant({
 
       {/* Floating Chat Modal / Drawer */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-slate-900/95 backdrop-blur-2xl border border-amber-500/30 rounded-3xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden animate-modal-in">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-slate-900/95 backdrop-blur-2xl border border-amber-500/30 rounded-3xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden animate-modal-in ai-scanline-container">
           
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800 flex items-center justify-between">

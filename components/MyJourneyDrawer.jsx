@@ -53,18 +53,22 @@ function MyJourneyDrawer({
         </div>
 
         {/* Journey Metrics Bar */}
-        <div className="p-4 bg-slate-950/60 border-b border-slate-800 grid grid-cols-3 gap-2 text-center shadow-inner">
+        <div className="p-4 bg-slate-950/60 border-b border-slate-800 grid grid-cols-4 gap-2 text-center shadow-inner">
           <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
             <p className="text-[10px] text-slate-400 uppercase font-semibold">Saved Sites</p>
             <p className="text-sm font-bold text-amber-400 mt-0.5">{savedMonuments.length}</p>
           </div>
           <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
-            <p className="text-[10px] text-slate-400 uppercase font-semibold">Est. Duration</p>
-            <p className="text-sm font-bold text-emerald-400 mt-0.5">{totalHours} Hours</p>
+            <p className="text-[10px] text-slate-400 uppercase font-semibold">Est. Hours</p>
+            <p className="text-sm font-bold text-emerald-400 mt-0.5">{totalHours}</p>
           </div>
           <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
-            <p className="text-[10px] text-slate-400 uppercase font-semibold">Travel Pace</p>
-            <p className="text-sm font-bold text-white mt-0.5">{savedMonuments.length > 3 ? 'Active' : 'Relaxed'}</p>
+            <p className="text-[10px] text-slate-400 uppercase font-semibold">Heritage XP</p>
+            <p className="text-sm font-bold text-amber-300 mt-0.5 xp-glow-badge">+{savedMonuments.length * 150 + 250}</p>
+          </div>
+          <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
+            <p className="text-[10px] text-slate-400 uppercase font-semibold">Rank</p>
+            <p className="text-sm font-bold text-white mt-0.5">{savedMonuments.length > 3 ? 'Explorer' : 'Novice'}</p>
           </div>
         </div>
 
