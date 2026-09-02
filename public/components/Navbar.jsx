@@ -63,23 +63,21 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
             onClick={() => onNavigate('hero')} 
             className="flex items-center space-x-3 cursor-pointer group select-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#B88746] via-[#D4A762] to-[#9A6C2F] p-[2px] shadow-sm shadow-[#B88746]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
-              <div className="w-full h-full bg-[#FFFFFF] rounded-[10px] flex items-center justify-center border border-[#E8DED0]">
-                <span className="font-display font-bold text-lg text-[#B88746] group-hover:text-[#9A6C2F] transition-colors">पु</span>
-              </div>
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#B88746]/40 shadow-sm group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300 shrink-0 bg-[#FFFFFF]">
+              <img src="./images/logo.jpg" alt="Pune Chronicles Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="flex items-center space-x-1.5">
-                <span className="font-display font-bold text-xl tracking-wider text-[#2F2A24] group-hover:text-[#B88746] transition-colors">PUNE</span>
-                <span className="font-display font-bold text-xl tracking-wider text-[#B88746] group-hover:text-[#9A6C2F] transition-colors">VARSA</span>
-                <span className="text-xs px-1.5 py-0.5 rounded font-semibold bg-[#B88746]/10 text-[#B88746] border border-[#B88746]/30">AI</span>
+                <span className="font-display font-[#2F2A24] font-bold text-xl tracking-wider group-hover:text-[#B88746] transition-colors">PUNE</span>
+                <span className="font-display font-[#B88746] font-bold text-xl tracking-wider group-hover:text-[#9A6C2F] transition-colors">VARSA</span>
+                <span className="text-xs px-1.5 py-0.5 rounded font-sans font-semibold bg-[#B88746]/10 text-[#B88746] border border-[#B88746]/30">AI</span>
               </div>
-              <p className="text-[10px] text-[#6B6258] tracking-wider font-medium">AI HERITAGE EXPLORER</p>
+              <p className="text-[10px] text-[#6B6258] tracking-widest font-sans font-medium uppercase">AI HERITAGE EXPLORER</p>
             </div>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-1 glass-pill px-3 py-1.5 rounded-full border border-[#E8DED0] bg-[#F5EFE4]/80 shadow-sm">
+          <nav className="hidden md:flex items-center space-x-1 glass-pill px-3 py-1.5 rounded-full border border-[#E8DED0] bg-[#F5EFE4]/80 shadow-sm font-sans">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -104,7 +102,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-3 font-sans">
             {/* SIH 1-Click Demo Button */}
             <button
               onClick={onStartSIHDemo}
@@ -167,7 +165,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
 
         {/* Mobile Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 glass-panel rounded-2xl border border-[#E8DED0] flex flex-col space-y-2 animate-fadeIn bg-[#FFFFFF] shadow-xl text-[#2F2A24]">
+          <div className="md:hidden mt-3 p-4 glass-panel rounded-2xl border border-[#E8DED0] flex flex-col space-y-2 animate-fadeIn bg-[#FFFFFF] shadow-xl text-[#2F2A24] font-sans">
             {navItems.map((item) => (
               <button
                 key={item.id}

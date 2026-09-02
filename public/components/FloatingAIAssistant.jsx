@@ -82,10 +82,8 @@ function FloatingAIAssistant({
           {/* Header */}
           <div className="p-4 bg-[#F5EFE4] border-b border-[#E8DED0] flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-[#B88746] p-[1.5px] shadow-sm">
-                <div className="w-full h-full bg-[#FFFFFF] rounded-[9px] flex items-center justify-center text-[#B88746] font-bold text-sm">
-                  पु
-                </div>
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-[#B88746]/40 shadow-sm shrink-0 bg-[#FFFFFF]">
+                <img src="./images/logo.jpg" alt="Punya AI Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <div className="flex items-center space-x-1.5">

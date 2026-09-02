@@ -9,15 +9,13 @@ function Footer({ onNavigate }) {
           {/* Col 1: Brand & SIH */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3 cursor-pointer group select-none" onClick={() => onNavigate('hero')}>
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#B88746] via-[#D4A762] to-[#9A6C2F] p-[1.5px] group-hover:scale-105 transition-transform duration-300 shadow-sm">
-                <div className="w-full h-full bg-[#FFFFFF] rounded-[9px] flex items-center justify-center font-display font-bold text-[#B88746] group-hover:text-[#9A6C2F] transition-colors border border-[#E8DED0]">
-                  पु
-                </div>
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#B88746]/40 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0 bg-[#FFFFFF]">
+                <img src="./images/logo.jpg" alt="Pune Chronicles Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <span className="font-display font-bold text-lg text-[#2F2A24] group-hover:text-[#B88746] transition-colors">PUNE</span>
                 <span className="font-display font-bold text-lg text-[#B88746] ml-1 group-hover:text-[#9A6C2F] transition-colors">VARSA</span>
-                <span className="text-[10px] ml-1.5 px-1.5 py-0.5 rounded bg-[#B88746]/10 text-[#B88746] font-bold border border-[#B88746]/30">AI</span>
+                <span className="text-[10px] ml-1.5 px-1.5 py-0.5 rounded font-sans font-semibold bg-[#B88746]/10 text-[#B88746] border border-[#B88746]/30">AI</span>
               </div>
             </div>
             <p className="text-[#6B6258] leading-relaxed text-xs font-normal">
