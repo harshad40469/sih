@@ -25,18 +25,18 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-20 bg-slate-950/60 relative border-t border-slate-800/80">
+    <section id="features" className="py-20 bg-[#F2E9DC] relative border-t border-[#E8DED0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#B88746]/10 border border-[#B88746]/30 text-[#B88746] text-xs font-semibold shadow-sm">
             <span>STARTUP INNOVATION</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
-            Pune's History. <span className="text-heritage-gradient">Your Way.</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#2F2A24]">
+            Pune's History. <span className="text-gold-gradient">Your Way.</span>
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B6258] text-sm sm:text-base leading-relaxed font-normal">
             Standard travel guides give everyone the same static paragraph. Pune Varsa uses AI context awareness to tailor every story, monument route, and recommendation to who you are.
           </p>
         </div>
@@ -46,34 +46,34 @@ function FeaturesSection() {
           {features.map((item, idx) => (
             <div
               key={idx}
-              className="glass-panel glass-panel-hover p-8 rounded-3xl border border-slate-800 flex flex-col justify-between relative overflow-hidden group"
+              className={`glass-panel glass-panel-hover p-8 rounded-3xl border border-[#E8DED0] bg-[#FFFFFF] flex flex-col justify-between relative overflow-hidden group shadow-md hover:border-[#B88746] stagger-${idx + 1}`}
             >
               {/* Subtle gradient corner glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#B88746]/5 rounded-full blur-2xl group-hover:bg-[#B88746]/15 transition-all duration-500 pointer-events-none" />
 
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-orange-500/10 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-2xl bg-[#FAF8F3] border border-[#E8DED0] flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm text-[#B88746]">
                     {item.icon}
                   </div>
-                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-slate-700">
+                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#FAF8F3] text-[#B88746] border border-[#E8DED0] shadow-sm">
                     {item.badge}
                   </span>
                 </div>
 
-                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                <h3 className="font-display text-xl font-bold text-[#2F2A24] mb-3 group-hover:text-[#B88746] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-[#6B6258] text-sm leading-relaxed mb-6 font-normal">
                   {item.description}
                 </p>
               </div>
 
               {/* Bullet points */}
-              <div className="pt-4 border-t border-slate-800/80 space-y-2">
+              <div className="pt-4 border-t border-[#EFE6D8] space-y-2">
                 {item.points.map((pt, pIdx) => (
-                  <div key={pIdx} className="flex items-center space-x-2 text-xs text-slate-400">
-                    <span className="text-amber-500 font-bold">✓</span>
+                  <div key={pIdx} className="flex items-center space-x-2 text-xs text-[#6B6258]">
+                    <span className="text-[#3D8B5A] font-bold">✓</span>
                     <span>{pt}</span>
                   </div>
                 ))}

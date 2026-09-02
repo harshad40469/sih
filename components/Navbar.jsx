@@ -50,7 +50,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
         isScrolled 
-          ? 'glass-panel border-b border-amber-500/25 shadow-2xl py-3 bg-[#090D16]/85 backdrop-blur-xl' 
+          ? 'glass-panel border-b border-[#E8DED0] shadow-md py-3 bg-[#FAF8F3]/90 backdrop-blur-xl' 
           : 'bg-transparent py-5'
       }`}
       style={{ willChange: 'transform' }}
@@ -63,23 +63,23 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
             onClick={() => onNavigate('hero')} 
             className="flex items-center space-x-3 cursor-pointer group select-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-amber-400 p-[2px] shadow-lg shadow-amber-500/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
-              <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <span className="font-display font-bold text-lg text-amber-400 group-hover:text-amber-300 transition-colors">पु</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#B88746] via-[#D4A762] to-[#9A6C2F] p-[2px] shadow-sm shadow-[#B88746]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+              <div className="w-full h-full bg-[#FFFFFF] rounded-[10px] flex items-center justify-center border border-[#E8DED0]">
+                <span className="font-display font-bold text-lg text-[#B88746] group-hover:text-[#9A6C2F] transition-colors">पु</span>
               </div>
             </div>
             <div>
               <div className="flex items-center space-x-1.5">
-                <span className="font-display font-bold text-xl tracking-wider text-white group-hover:text-amber-100 transition-colors">PUNE</span>
-                <span className="font-display font-bold text-xl tracking-wider text-amber-400 group-hover:text-amber-300 transition-colors">VARSA</span>
-                <span className="text-xs px-1.5 py-0.5 rounded font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">AI</span>
+                <span className="font-display font-bold text-xl tracking-wider text-[#2F2A24] group-hover:text-[#B88746] transition-colors">PUNE</span>
+                <span className="font-display font-bold text-xl tracking-wider text-[#B88746] group-hover:text-[#9A6C2F] transition-colors">VARSA</span>
+                <span className="text-xs px-1.5 py-0.5 rounded font-semibold bg-[#B88746]/10 text-[#B88746] border border-[#B88746]/30">AI</span>
               </div>
-              <p className="text-[10px] text-slate-400 tracking-wider">AI HERITAGE EXPLORER</p>
+              <p className="text-[10px] text-[#6B6258] tracking-wider font-medium">AI HERITAGE EXPLORER</p>
             </div>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-1 glass-pill px-3 py-1.5 rounded-full border border-slate-800/80 shadow-lg shadow-black/40">
+          <nav className="hidden md:flex items-center space-x-1 glass-pill px-3 py-1.5 rounded-full border border-[#E8DED0] bg-[#F5EFE4]/80 shadow-sm">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -88,13 +88,13 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
                   onClick={() => onNavigate(item.id)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 flex items-center space-x-2 btn-interactive ${
                     isActive 
-                      ? 'bg-gradient-to-r from-amber-500/25 to-orange-500/20 text-amber-300 border border-amber-500/50 shadow-sm shadow-amber-500/20' 
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      ? 'bg-[#B88746] text-white shadow-sm font-semibold' 
+                      : 'text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#FAF8F3]'
                   }`}
                 >
                   <span className="link-underline">{item.label}</span>
                   {item.badge && (
-                    <span className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-bold rounded-full shadow-sm animate-pulse">
+                    <span className="text-[10px] px-1.5 py-0.5 bg-[#D4A762] text-white font-bold rounded-full shadow-sm animate-pulse">
                       {item.badge}
                     </span>
                   )}
@@ -108,7 +108,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
             {/* SIH 1-Click Demo Button */}
             <button
               onClick={onStartSIHDemo}
-              className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-orange-600/90 to-amber-600/90 text-white border border-amber-400/40 hover:brightness-110 shadow-lg shadow-orange-950/40 flex items-center space-x-1.5 btn-interactive btn-shimmer animate-pulse"
+              className="px-4 py-2 text-xs font-semibold rounded-lg bg-[#B88746] text-white border border-[#B88746] hover:bg-[#9A6C2F] shadow-sm flex items-center space-x-1.5 btn-interactive btn-shimmer"
               title="Launch Guided Hackathon Demo Tour"
             >
               <span>🚀</span>
@@ -118,14 +118,14 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
             {/* My Journey Bookmark Button */}
             <button
               onClick={onOpenJourney}
-              className="relative p-2.5 rounded-xl glass-pill text-slate-200 hover:text-amber-400 hover:border-amber-500/40 transition-all btn-interactive group"
+              className="relative p-2.5 rounded-xl glass-pill text-[#2F2A24] hover:text-[#B88746] hover:border-[#B88746] transition-all btn-interactive group border border-[#E8DED0]"
               aria-label="View Saved Monuments"
             >
               <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
               </svg>
               {savedCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-amber-500 text-slate-950 font-bold text-xs rounded-full flex items-center justify-center shadow-lg shadow-amber-500/40 ring-2 ring-slate-950 animate-bounce">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#B88746] text-white font-bold text-xs rounded-full flex items-center justify-center shadow-md ring-2 ring-[#FAF8F3] animate-bounce">
                   {savedCount}
                 </span>
               )}
@@ -136,14 +136,14 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
           <div className="flex items-center space-x-2 md:hidden">
             <button
               onClick={onOpenJourney}
-              className="relative p-2 rounded-lg glass-pill text-slate-200 btn-interactive"
+              className="relative p-2 rounded-lg glass-pill text-[#2F2A24] btn-interactive border border-[#E8DED0]"
               aria-label="View Saved Monuments"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
               </svg>
               {savedCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-bold text-[10px] rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#B88746] text-white font-bold text-[10px] rounded-full flex items-center justify-center">
                   {savedCount}
                 </span>
               )}
@@ -151,7 +151,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg glass-pill text-slate-200 hover:text-white btn-interactive"
+              className="p-2 rounded-lg glass-pill text-[#2F2A24] hover:text-[#B88746] btn-interactive border border-[#E8DED0]"
               aria-label="Toggle navigation menu"
             >
               <svg className="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
 
         {/* Mobile Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 glass-panel rounded-2xl border border-slate-800/90 flex flex-col space-y-2 animate-fadeIn bg-slate-900/95 shadow-2xl">
+          <div className="md:hidden mt-3 p-4 glass-panel rounded-2xl border border-[#E8DED0] flex flex-col space-y-2 animate-fadeIn bg-[#FFFFFF] shadow-xl text-[#2F2A24]">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -176,24 +176,24 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
                   setIsMobileMenuOpen(false);
                 }}
                 className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between transition-all ${
-                  activeSection === item.id ? 'bg-amber-500/20 text-amber-300 font-semibold' : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  activeSection === item.id ? 'bg-[#B88746]/15 text-[#B88746] font-semibold' : 'text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#F5EFE4]'
                 }`}
               >
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="text-[10px] px-2 py-0.5 bg-amber-500 text-slate-950 font-bold rounded-full">
+                  <span className="text-[10px] px-2 py-0.5 bg-[#B88746] text-white font-bold rounded-full">
                     {item.badge}
                   </span>
                 )}
               </button>
             ))}
-            <div className="pt-2 border-t border-slate-800">
+            <div className="pt-2 border-t border-[#E8DED0]">
               <button
                 onClick={() => {
                   onStartSIHDemo();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 text-white font-semibold text-xs flex items-center justify-center space-x-2 btn-interactive btn-shimmer"
+                className="w-full py-2.5 rounded-xl bg-[#B88746] text-white hover:bg-[#9A6C2F] font-semibold text-xs flex items-center justify-center space-x-2 btn-interactive btn-shimmer"
               >
                 <span>🚀</span>
                 <span>Launch SIH Demo Flow</span>
@@ -208,4 +208,3 @@ function Navbar({ activeSection, onNavigate, savedCount, onOpenJourney, onStartS
 }
 
 window.Navbar = Navbar;
-

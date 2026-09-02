@@ -63,42 +63,42 @@ function FloatingAIAssistant({
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={onToggle}
-          className="relative group p-4 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-400 text-slate-950 shadow-2xl shadow-amber-500/40 btn-interactive btn-shimmer btn-magnetic flex items-center space-x-2.5 font-bold"
+          className="relative group p-4 rounded-2xl bg-[#B88746] hover:bg-[#9A6C2F] text-white shadow-xl shadow-[#B88746]/20 btn-interactive btn-shimmer btn-magnetic flex items-center space-x-2.5 font-bold border border-[#B88746]"
           aria-label="Open AI Heritage Assistant"
         >
           {/* Animated ping ring */}
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-slate-950 animate-ping" />
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-slate-950" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#3D8B5A] rounded-full border-2 border-white animate-ping" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#3D8B5A] rounded-full border-2 border-white" />
 
           <span className="text-xl group-hover:rotate-12 transition-transform">🤖</span>
-          <span className="text-xs tracking-wide hidden sm:inline font-extrabold text-slate-950">Ask Punya AI</span>
+          <span className="text-xs tracking-wide hidden sm:inline font-extrabold text-white">Ask Punya AI</span>
         </button>
       </div>
 
       {/* Floating Chat Modal / Drawer */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-slate-900/95 backdrop-blur-2xl border border-amber-500/30 rounded-3xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden animate-modal-in ai-scanline-container">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[580px] bg-[#FFFFFF] border border-[#E8DED0] rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-modal-in ai-scanline-container text-[#2F2A24]">
           
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800 flex items-center justify-between">
+          <div className="p-4 bg-[#F5EFE4] border-b border-[#E8DED0] flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-gold-gradient p-[1.5px] shadow-md">
-                <div className="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center text-amber-400 font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#B88746] p-[1.5px] shadow-sm">
+                <div className="w-full h-full bg-[#FFFFFF] rounded-[9px] flex items-center justify-center text-[#B88746] font-bold text-sm">
                   पु
                 </div>
               </div>
               <div>
                 <div className="flex items-center space-x-1.5">
-                  <h3 className="font-display font-bold text-sm text-white">Punya AI Guide</h3>
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <h3 className="font-display font-bold text-sm text-[#2F2A24]">Punya AI Guide</h3>
+                  <span className="w-2 h-2 rounded-full bg-[#3D8B5A] animate-pulse"></span>
                 </div>
-                <p className="text-[10px] text-amber-400/90 font-medium">Smart Heritage Assistant • Online</p>
+                <p className="text-[10px] text-[#B88746] font-medium">Smart Heritage Assistant • Online</p>
               </div>
             </div>
 
             <button
               onClick={onToggle}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 btn-interactive"
+              className="p-1.5 rounded-lg text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#E8DED0] btn-interactive"
               aria-label="Close Assistant"
             >
               ✕
@@ -106,14 +106,14 @@ function FloatingAIAssistant({
           </div>
 
           {/* Chat Messages Body */}
-          <div className="p-4 flex-1 overflow-y-auto space-y-4 max-h-[380px] bg-slate-950/60 shadow-inner">
+          <div className="p-4 flex-1 overflow-y-auto space-y-4 max-h-[380px] bg-[#FAF8F3] shadow-inner">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
                 className={`flex items-start space-x-2 animate-fadeIn ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'ai' && (
-                  <div className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-bold text-[10px] flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                  <div className="w-6 h-6 rounded-full bg-[#B88746] text-white font-bold text-[10px] flex items-center justify-center shrink-0 mt-1 shadow-sm">
                     AI
                   </div>
                 )}
@@ -121,8 +121,8 @@ function FloatingAIAssistant({
                   <div
                     className={`p-3 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                       msg.sender === 'user'
-                        ? 'bg-amber-500 text-slate-950 font-medium rounded-tr-none shadow-md'
-                        : 'bg-slate-900 border border-slate-800 text-slate-200 rounded-tl-none shadow-sm'
+                        ? 'bg-[#B88746] text-white font-medium rounded-tr-none shadow-sm'
+                        : 'bg-[#FFFFFF] border border-[#E8DED0] text-[#2F2A24] rounded-tl-none shadow-sm'
                     }`}
                   >
                     {msg.text}
@@ -141,7 +141,7 @@ function FloatingAIAssistant({
                             onClick={() => {
                               onSelectMonumentById(mId);
                             }}
-                            className="text-[11px] px-2.5 py-1 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/30 font-semibold btn-interactive transition-all flex items-center space-x-1 shadow-sm"
+                            className="text-[11px] px-2.5 py-1 rounded-xl bg-[#FAF8F3] hover:bg-[#B88746] text-[#B88746] hover:text-white border border-[#B88746]/40 font-semibold btn-interactive transition-all flex items-center space-x-1 shadow-sm"
                           >
                             <span>🏛️</span>
                             <span>{mon.name}</span>
@@ -156,23 +156,23 @@ function FloatingAIAssistant({
             ))}
 
             {isTyping && (
-              <div className="flex items-center space-x-2 text-xs text-amber-400 pl-8 animate-pulse">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce" />
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce delay-100" />
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce delay-200" />
-                <span className="text-[10px] text-slate-400">Punya AI is thinking...</span>
+              <div className="flex items-center space-x-2 text-xs text-[#B88746] pl-8 animate-pulse">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B88746] animate-bounce" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B88746] animate-bounce delay-100" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B88746] animate-bounce delay-200" />
+                <span className="text-[10px] text-[#6B6258]">Punya AI is thinking...</span>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
           {/* Quick Suggested Prompts (Horizontal Chips) */}
-          <div className="px-3 py-2 bg-slate-900 border-t border-slate-800 flex items-center space-x-1.5 overflow-x-auto scrollbar-none">
+          <div className="px-3 py-2 bg-[#F5EFE4] border-t border-[#E8DED0] flex items-center space-x-1.5 overflow-x-auto scrollbar-none">
             {suggestedQuestions.map((q, qIdx) => (
               <button
                 key={qIdx}
                 onClick={() => handleSendMessage(q)}
-                className="text-[10px] px-2.5 py-1 rounded-full bg-slate-950 text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 border border-slate-800 shrink-0 btn-interactive transition-colors"
+                className="text-[10px] px-2.5 py-1 rounded-full bg-[#FFFFFF] text-[#6B6258] hover:text-[#B88746] hover:bg-[#FAF8F3] border border-[#E8DED0] shrink-0 btn-interactive transition-colors"
               >
                 "{q}"
               </button>
@@ -180,18 +180,18 @@ function FloatingAIAssistant({
           </div>
 
           {/* Input Box */}
-          <div className="p-3 bg-slate-950 border-t border-slate-800 flex items-center space-x-2">
+          <div className="p-3 bg-[#FFFFFF] border-t border-[#E8DED0] flex items-center space-x-2">
             <input
               type="text"
               placeholder="Ask Punya AI anything..."
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-              className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 shadow-inner"
+              className="flex-1 bg-[#F5EFE4] border border-[#E8DED0] rounded-xl px-3 py-2 text-xs text-[#2F2A24] placeholder-[#8C8479] focus:outline-none focus:border-[#B88746] shadow-inner"
             />
             <button
               onClick={() => handleSendMessage()}
-              className="p-2 rounded-xl bg-gold-gradient text-slate-950 btn-interactive btn-shimmer font-bold"
+              className="p-2 rounded-xl bg-[#B88746] hover:bg-[#9A6C2F] text-white btn-interactive btn-shimmer font-bold"
               aria-label="Send Message"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -207,4 +207,3 @@ function FloatingAIAssistant({
 }
 
 window.FloatingAIAssistant = FloatingAIAssistant;
-

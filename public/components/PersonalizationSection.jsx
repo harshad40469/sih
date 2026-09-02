@@ -50,72 +50,78 @@ function PersonalizationSection({
         particleCount: 80,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#F59E0B', '#D97706', '#EA580C', '#FFFFFF']
+        colors: ['#B88746', '#D4A762', '#9A6C2F', '#FFFFFF']
       });
     }
     onGenerateRecommendations();
   };
 
   return (
-    <section id="personalize" className="py-20 relative bg-[#0B101D] border-t border-slate-800">
+    <section id="personalize" className="py-20 relative bg-[#F2E9DC] border-t border-[#E8DED0]">
       
       {/* Background ambient accents */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#B88746]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#D4A762]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#B88746]/10 border border-[#B88746]/30 text-[#B88746] text-xs font-semibold shadow-sm">
             <span>✨ AI PERSONALIZATION ENGINE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
-            Tailor Your <span className="text-heritage-gradient">Pune Experience</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#2F2A24]">
+            Tailor Your <span className="text-gold-gradient">Pune Experience</span>
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base">
+          <p className="text-[#6B6258] text-sm sm:text-base font-normal">
             Select your interests, time window, and style. Our AI matches your profile against Pune's heritage dataset in real time.
           </p>
         </div>
 
         {/* Wizard Container */}
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-amber-500/20 shadow-2xl">
+        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-[#E8DED0] bg-[#FFFFFF] shadow-lg">
           
           {/* Step Indicator Tabs */}
-          <div className="grid grid-cols-3 gap-3 mb-10 pb-6 border-b border-slate-800">
+          <div className="grid grid-cols-3 gap-3 mb-10 pb-6 border-b border-[#E8DED0]">
             <button
               onClick={() => setCurrentStep(1)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 1 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-[#B88746] text-white shadow-sm font-semibold' 
+                  : 'text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#F5EFE4]'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">1</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 1 ? 'bg-white text-[#B88746] scale-110' : 'bg-[#B88746]/20 text-[#B88746]'
+              }`}>1</span>
               <span className="font-semibold text-xs sm:text-sm">Interests ({selectedInterests.length})</span>
             </button>
 
             <button
               onClick={() => setCurrentStep(2)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 2 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-[#B88746] text-white shadow-sm font-semibold' 
+                  : 'text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#F5EFE4]'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">2</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 2 ? 'bg-white text-[#B88746] scale-110' : 'bg-[#B88746]/20 text-[#B88746]'
+              }`}>2</span>
               <span className="font-semibold text-xs sm:text-sm">Time Window</span>
             </button>
 
             <button
               onClick={() => setCurrentStep(3)}
-              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all ${
+              className={`p-3 rounded-2xl flex items-center justify-center space-x-2 transition-all duration-300 btn-interactive ${
                 currentStep === 3 
-                  ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 shadow-md' 
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-[#B88746] text-white shadow-sm font-semibold' 
+                  : 'text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#F5EFE4]'
               }`}
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500/30 text-amber-300 flex items-center justify-center text-xs font-bold">3</span>
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform ${
+                currentStep === 3 ? 'bg-white text-[#B88746] scale-110' : 'bg-[#B88746]/20 text-[#B88746]'
+              }`}>3</span>
               <span className="font-semibold text-xs sm:text-sm">Exploration Style</span>
             </button>
           </div>
@@ -125,16 +131,16 @@ function PersonalizationSection({
             <div className="space-y-6 animate-fadeIn">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <h3 className="text-xl font-bold text-white flex items-center space-x-2">
+                  <h3 className="text-xl font-bold text-[#2F2A24] flex items-center space-x-2">
                     <span>What are you interested in?</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">Multi-select</span>
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#B88746]/15 text-[#B88746] border border-[#B88746]/30 font-medium">Multi-select</span>
                   </h3>
-                  <p className="text-xs text-slate-400">Choose one or more areas that excite you most.</p>
+                  <p className="text-xs text-[#6B6258]">Choose one or more areas that excite you most.</p>
                 </div>
                 {selectedInterests.length > 0 && (
                   <button
                     onClick={() => setSelectedInterests([])}
-                    className="text-xs text-slate-400 hover:text-amber-400 underline self-start sm:self-auto"
+                    className="text-xs text-[#6B6258] hover:text-[#B88746] underline self-start sm:self-auto transition-colors"
                   >
                     Clear selection
                   </button>
@@ -148,25 +154,25 @@ function PersonalizationSection({
                     <div
                       key={opt.id}
                       onClick={() => toggleInterest(opt.id)}
-                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border flex flex-col justify-between ${
+                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 border flex flex-col justify-between btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
-                          : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
+                          ? 'bg-[#FAF8F3] border-[#B88746] shadow-md scale-[1.02]'
+                          : 'bg-[#FFFFFF] border-[#E8DED0] hover:border-[#B88746] hover:bg-[#F5EFE4]'
                       }`}
                     >
                       <div className="flex items-start justify-between">
-                        <span className="text-3xl">{opt.icon}</span>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                          isSelected ? 'bg-amber-400 text-slate-950' : 'border border-slate-700 text-transparent'
+                        <span className="text-3xl transition-transform group-hover:scale-110">{opt.icon}</span>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+                          isSelected ? 'bg-[#B88746] text-white scale-110 shadow-sm' : 'border border-[#E8DED0] text-transparent'
                         }`}>
                           ✓
                         </div>
                       </div>
                       <div className="mt-3">
-                        <h4 className={`font-semibold text-sm ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
+                        <h4 className={`font-semibold text-sm transition-colors ${isSelected ? 'text-[#B88746]' : 'text-[#2F2A24]'}`}>
                           {opt.label}
                         </h4>
-                        <p className="text-[11px] text-slate-400 mt-1 leading-snug">
+                        <p className="text-[11px] text-[#6B6258] mt-1 leading-snug">
                           {opt.desc}
                         </p>
                       </div>
@@ -178,7 +184,7 @@ function PersonalizationSection({
               <div className="flex justify-end pt-4">
                 <button
                   onClick={() => setCurrentStep(2)}
-                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 hover:brightness-110"
+                  className="px-6 py-3 rounded-xl bg-[#B88746] hover:bg-[#9A6C2F] text-white font-bold text-sm flex items-center space-x-2 shadow-sm btn-interactive btn-shimmer"
                 >
                   <span>Next: Choose Time</span>
                   <span>→</span>
@@ -191,8 +197,8 @@ function PersonalizationSection({
           {currentStep === 2 && (
             <div className="space-y-6 animate-fadeIn">
               <div>
-                <h3 className="text-xl font-bold text-white">How much time do you have?</h3>
-                <p className="text-xs text-slate-400">We'll filter recommendations and walking routes to match your window.</p>
+                <h3 className="text-xl font-bold text-[#2F2A24]">How much time do you have?</h3>
+                <p className="text-xs text-[#6B6258]">We'll filter recommendations and walking routes to match your window.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -202,27 +208,27 @@ function PersonalizationSection({
                     <div
                       key={opt.id}
                       onClick={() => setSelectedTime(opt.id)}
-                      className={`p-5 rounded-2xl cursor-pointer transition-all duration-200 border flex flex-col justify-between ${
+                      className={`p-5 rounded-2xl cursor-pointer transition-all duration-300 border flex flex-col justify-between btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
-                          : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
+                          ? 'bg-[#FAF8F3] border-[#B88746] shadow-md scale-[1.02]'
+                          : 'bg-[#FFFFFF] border-[#E8DED0] hover:border-[#B88746] hover:bg-[#F5EFE4]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700">
+                        <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#F5EFE4] text-[#B88746] border border-[#E8DED0]">
                           {opt.badge}
                         </span>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                          isSelected ? 'bg-amber-400 text-slate-950' : 'border border-slate-700 text-transparent'
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+                          isSelected ? 'bg-[#B88746] text-white scale-110 shadow-sm' : 'border border-[#E8DED0] text-transparent'
                         }`}>
                           ✓
                         </div>
                       </div>
                       <div className="mt-4">
-                        <h4 className={`text-lg font-bold ${isSelected ? 'text-amber-300' : 'text-slate-100'}`}>
+                        <h4 className={`text-lg font-bold transition-colors ${isSelected ? 'text-[#B88746]' : 'text-[#2F2A24]'}`}>
                           {opt.label}
                         </h4>
-                        <p className="text-xs text-slate-400 mt-1">{opt.desc}</p>
+                        <p className="text-xs text-[#6B6258] mt-1">{opt.desc}</p>
                       </div>
                     </div>
                   );
@@ -232,13 +238,13 @@ function PersonalizationSection({
               <div className="flex justify-between pt-4">
                 <button
                   onClick={() => setCurrentStep(1)}
-                  className="px-5 py-2.5 rounded-xl glass-pill text-slate-300 hover:text-white text-sm"
+                  className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E8DED0] text-[#2F2A24] hover:bg-[#F5EFE4] text-sm btn-interactive"
                 >
                   ← Back to Interests
                 </button>
                 <button
                   onClick={() => setCurrentStep(3)}
-                  className="px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-bold text-sm flex items-center space-x-2 shadow-lg shadow-amber-500/20 hover:brightness-110"
+                  className="px-6 py-3 rounded-xl bg-[#B88746] hover:bg-[#9A6C2F] text-white font-bold text-sm flex items-center space-x-2 shadow-sm btn-interactive btn-shimmer"
                 >
                   <span>Next: Exploration Style</span>
                   <span>→</span>
@@ -251,8 +257,8 @@ function PersonalizationSection({
           {currentStep === 3 && (
             <div className="space-y-6 animate-fadeIn">
               <div>
-                <h3 className="text-xl font-bold text-white">Choose your exploration style</h3>
-                <p className="text-xs text-slate-400">Customizes the tone of the stories, pacing, and visit notes.</p>
+                <h3 className="text-xl font-bold text-[#2F2A24]">Choose your exploration style</h3>
+                <p className="text-xs text-[#6B6258]">Customizes the tone of the stories, pacing, and visit notes.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -262,21 +268,21 @@ function PersonalizationSection({
                     <div
                       key={opt.id}
                       onClick={() => setSelectedStyle(opt.id)}
-                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border flex items-start space-x-3 ${
+                      className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 border flex items-start space-x-3 btn-interactive select-none ${
                         isSelected
-                          ? 'bg-gradient-to-br from-amber-500/25 to-orange-500/10 border-amber-500 shadow-lg shadow-amber-950/40 scale-[1.02]'
-                          : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
+                          ? 'bg-[#FAF8F3] border-[#B88746] shadow-md scale-[1.02]'
+                          : 'bg-[#FFFFFF] border-[#E8DED0] hover:border-[#B88746] hover:bg-[#F5EFE4]'
                       }`}
                     >
                       <span className="text-2xl">{opt.icon}</span>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <h4 className={`font-semibold text-sm ${isSelected ? 'text-amber-300' : 'text-slate-200'}`}>
+                          <h4 className={`font-semibold text-sm transition-colors ${isSelected ? 'text-[#B88746]' : 'text-[#2F2A24]'}`}>
                             {opt.label}
                           </h4>
-                          {isSelected && <span className="text-amber-400 font-bold text-xs">✓</span>}
+                          {isSelected && <span className="text-[#B88746] font-bold text-xs animate-bounce">✓</span>}
                         </div>
-                        <p className="text-[11px] text-slate-400 mt-1">{opt.desc}</p>
+                        <p className="text-[11px] text-[#6B6258] mt-1">{opt.desc}</p>
                       </div>
                     </div>
                   );
@@ -284,14 +290,14 @@ function PersonalizationSection({
               </div>
 
               {/* Action Banner */}
-              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+              <div className="p-4 rounded-2xl bg-[#F5EFE4] border border-[#E8DED0] flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 shadow-sm">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#B88746]/15 text-[#B88746] flex items-center justify-center text-xl shrink-0 shadow-sm border border-[#B88746]/30">
                     ⚡
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-white">Your Profile is Ready!</p>
-                    <p className="text-[11px] text-slate-400">
+                    <p className="text-xs font-semibold text-[#2F2A24]">Your Profile is Ready!</p>
+                    <p className="text-[11px] text-[#6B6258]">
                       {selectedInterests.length} interest(s) selected • {timeOptions.find(t=>t.id===selectedTime)?.label} • {styleOptions.find(s=>s.id===selectedStyle)?.label} style
                     </p>
                   </div>
@@ -300,13 +306,13 @@ function PersonalizationSection({
                 <div className="flex items-center space-x-3 w-full sm:w-auto">
                   <button
                     onClick={() => setCurrentStep(2)}
-                    className="px-4 py-2.5 rounded-xl glass-pill text-slate-300 text-xs hover:text-white"
+                    className="px-4 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E8DED0] text-[#2F2A24] hover:bg-[#FAF8F3] text-xs btn-interactive"
                   >
                     ← Back
                   </button>
                   <button
                     onClick={handleGenerate}
-                    className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm shadow-xl shadow-amber-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2"
+                    className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-[#B88746] hover:bg-[#9A6C2F] text-white font-extrabold text-sm shadow-md btn-interactive btn-shimmer flex items-center justify-center space-x-2"
                   >
                     <span>Generate Recommendations</span>
                     <span>✨</span>

@@ -1,58 +1,58 @@
 // Footer Component
 function Footer({ onNavigate }) {
   return (
-    <footer className="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
+    <footer className="bg-[#F5EFE4] border-t border-[#E8DED0] pt-16 pb-12 text-[#6B6258] text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800/60">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#E8DED0]">
           
           {/* Col 1: Brand & SIH */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3 cursor-pointer group select-none" onClick={() => onNavigate('hero')}>
-              <div className="w-9 h-9 rounded-xl bg-gold-gradient p-[1.5px] group-hover:scale-105 transition-transform duration-300 shadow-md">
-                <div className="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center font-display font-bold text-amber-400 group-hover:text-amber-300 transition-colors">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#B88746] via-[#D4A762] to-[#9A6C2F] p-[1.5px] group-hover:scale-105 transition-transform duration-300 shadow-sm">
+                <div className="w-full h-full bg-[#FFFFFF] rounded-[9px] flex items-center justify-center font-display font-bold text-[#B88746] group-hover:text-[#9A6C2F] transition-colors border border-[#E8DED0]">
                   पु
                 </div>
               </div>
               <div>
-                <span className="font-display font-bold text-lg text-white group-hover:text-amber-100 transition-colors">PUNE</span>
-                <span className="font-display font-bold text-lg text-amber-400 ml-1 group-hover:text-amber-300 transition-colors">VARSA</span>
-                <span className="text-[10px] ml-1.5 px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">AI</span>
+                <span className="font-display font-bold text-lg text-[#2F2A24] group-hover:text-[#B88746] transition-colors">PUNE</span>
+                <span className="font-display font-bold text-lg text-[#B88746] ml-1 group-hover:text-[#9A6C2F] transition-colors">VARSA</span>
+                <span className="text-[10px] ml-1.5 px-1.5 py-0.5 rounded bg-[#B88746]/10 text-[#B88746] font-bold border border-[#B88746]/30">AI</span>
               </div>
             </div>
-            <p className="text-slate-400 leading-relaxed text-xs">
+            <p className="text-[#6B6258] leading-relaxed text-xs font-normal">
               AI-Powered Personalized Pune Heritage Explorer built for Smart India Hackathon (SIH). Bridging Pune's 1,200-year history with cutting-edge conversational AI.
             </p>
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs">Explore Features</h4>
-            <ul className="space-y-2">
-              <li><button onClick={() => onNavigate('personalize')} className="hover:text-amber-400 link-underline transition-colors">✨ AI Personalizer</button></li>
-              <li><button onClick={() => onNavigate('explore')} className="hover:text-amber-400 link-underline transition-colors">🏛️ All Monuments</button></li>
-              <li><button onClick={() => onNavigate('walks')} className="hover:text-amber-400 link-underline transition-colors">🗺️ Curated Heritage Walks</button></li>
-              <li><button onClick={() => onNavigate('features')} className="hover:text-amber-400 link-underline transition-colors">💡 Startup Innovation</button></li>
+            <h4 className="text-[#2F2A24] font-bold uppercase tracking-wider text-xs">Explore Features</h4>
+            <ul className="space-y-2 font-medium">
+              <li><button onClick={() => onNavigate('personalize')} className="hover:text-[#B88746] link-underline transition-colors">✨ AI Personalizer</button></li>
+              <li><button onClick={() => onNavigate('explore')} className="hover:text-[#B88746] link-underline transition-colors">🏛️ All Monuments</button></li>
+              <li><button onClick={() => onNavigate('walks')} className="hover:text-[#B88746] link-underline transition-colors">🗺️ Curated Heritage Walks</button></li>
+              <li><button onClick={() => onNavigate('features')} className="hover:text-[#B88746] link-underline transition-colors">💡 Startup Innovation</button></li>
             </ul>
           </div>
 
           {/* Col 3: Key Pune Monuments */}
           <div className="space-y-3">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs">Key Pune Heritage</h4>
-            <ul className="space-y-2">
-              <li className="hover:text-amber-300 transition-colors cursor-default"><span>Shaniwar Wada (Peshwa Citadel)</span></li>
-              <li className="hover:text-amber-300 transition-colors cursor-default"><span>Sinhagad Fort (Maratha Stronghold)</span></li>
-              <li className="hover:text-amber-300 transition-colors cursor-default"><span>Aga Khan Palace (Gandhi Memorial)</span></li>
-              <li className="hover:text-amber-300 transition-colors cursor-default"><span>Pataleshwar Cave Temple (8th Century)</span></li>
+            <h4 className="text-[#2F2A24] font-bold uppercase tracking-wider text-xs">Key Pune Heritage</h4>
+            <ul className="space-y-2 font-medium">
+              <li className="hover:text-[#B88746] transition-colors cursor-default"><span>Shaniwar Wada (Peshwa Citadel)</span></li>
+              <li className="hover:text-[#B88746] transition-colors cursor-default"><span>Sinhagad Fort (Maratha Stronghold)</span></li>
+              <li className="hover:text-[#B88746] transition-colors cursor-default"><span>Aga Khan Palace (Gandhi Memorial)</span></li>
+              <li className="hover:text-[#B88746] transition-colors cursor-default"><span>Pataleshwar Cave Temple (8th Century)</span></li>
             </ul>
           </div>
 
           {/* Col 4: Hackathon Innovation */}
           <div className="space-y-3">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs">SIH Problem Statement</h4>
-            <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5 shadow-sm hover:border-amber-500/30 transition-colors">
-              <p className="text-amber-400 font-semibold text-[11px]">Context-Aware Heritage Travel</p>
-              <p className="text-slate-400 text-[11px] leading-relaxed">
+            <h4 className="text-[#2F2A24] font-bold uppercase tracking-wider text-xs">SIH Problem Statement</h4>
+            <div className="p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#E8DED0] space-y-1.5 shadow-sm hover:border-[#B88746]/40 transition-colors">
+              <p className="text-[#B88746] font-semibold text-[11px]">Context-Aware Heritage Travel</p>
+              <p className="text-[#6B6258] text-[11px] leading-relaxed font-normal">
                 Solving fragmented & generic monument information through personalized AI trails and interactive stories.
               </p>
             </div>
@@ -61,14 +61,14 @@ function Footer({ onNavigate }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#8C8479] text-[11px]">
           <p>© 2026 Pune Varsa • Smart India Hackathon Prototype. Crafted with pride for Maharashtra's cultural capital.</p>
-          <div className="flex items-center space-x-4">
-            <span className="hover:text-slate-300 transition-colors cursor-pointer">Privacy</span>
+          <div className="flex items-center space-x-4 font-medium">
+            <span className="hover:text-[#2F2A24] transition-colors cursor-pointer">Privacy</span>
             <span>•</span>
-            <span className="hover:text-slate-300 transition-colors cursor-pointer">Terms</span>
+            <span className="hover:text-[#2F2A24] transition-colors cursor-pointer">Terms</span>
             <span>•</span>
-            <span className="text-amber-400 font-semibold">Live Startup Prototype</span>
+            <span className="text-[#B88746] font-semibold">Live Startup Prototype</span>
           </div>
         </div>
 
@@ -78,4 +78,3 @@ function Footer({ onNavigate }) {
 }
 
 window.Footer = Footer;
-

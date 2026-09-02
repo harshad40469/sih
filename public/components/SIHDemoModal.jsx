@@ -6,6 +6,16 @@ function SIHDemoModal({
 }) {
   const [activeStep, setActiveStep] = React.useState(1);
 
+  // Close on Escape key
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   const demoSteps = [
     {
       step: 1,
@@ -54,53 +64,54 @@ function SIHDemoModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-xl flex items-center justify-center p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-50 bg-[#2F2A24]/60 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
       
-      <div className="w-full max-w-2xl bg-slate-900 border border-amber-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+      <div className="w-full max-w-2xl bg-[#FFFFFF] border border-[#E8DED0] rounded-3xl overflow-hidden shadow-2xl flex flex-col animate-modal-in text-[#2F2A24]">
         
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-amber-600/30 via-slate-900 to-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-6 bg-[#F5EFE4] border-b border-[#E8DED0] flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-gold-gradient text-slate-950 flex items-center justify-center font-extrabold text-lg shadow-lg">
+            <div className="w-10 h-10 rounded-xl bg-[#B88746] text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
               🚀
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h3 className="font-display font-bold text-lg text-white">SIH Demo Flow</h3>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-bold">Judge Mode</span>
+                <h3 className="font-display font-bold text-lg text-[#2F2A24]">SIH Demo Flow</h3>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#B88746] text-white font-bold shadow-sm">Judge Mode</span>
               </div>
-              <p className="text-xs text-slate-300">Automated end-to-end evaluation of problem statement flow</p>
+              <p className="text-xs text-[#6B6258]">Automated end-to-end evaluation of problem statement flow</p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800"
+            className="p-2 rounded-xl text-[#6B6258] hover:text-[#2F2A24] hover:bg-[#E8DED0] btn-interactive"
+            aria-label="Close demo guide"
           >
             ✕
           </button>
         </div>
 
         {/* Steps List */}
-        <div className="p-6 overflow-y-auto max-h-[60vh] space-y-3">
+        <div className="p-6 overflow-y-auto max-h-[60vh] space-y-3 shadow-inner bg-[#FFFFFF]">
           {demoSteps.map((s) => {
             const isCurrent = activeStep === s.step;
 
             return (
               <div
                 key={s.step}
-                className={`p-4 rounded-2xl border transition-all ${
+                className={`p-4 rounded-2xl border transition-all duration-300 btn-interactive ${
                   isCurrent
-                    ? 'bg-amber-500/10 border-amber-500/50 shadow-md'
-                    : 'bg-slate-950/50 border-slate-800 hover:border-slate-700'
+                    ? 'bg-[#FAF8F3] border-[#B88746] shadow-sm'
+                    : 'bg-[#FFFFFF] border-[#E8DED0] hover:border-[#B88746]/40'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <h4 className={`text-sm font-bold ${isCurrent ? 'text-amber-300' : 'text-white'}`}>
+                    <h4 className={`text-sm font-bold transition-colors ${isCurrent ? 'text-[#B88746]' : 'text-[#2F2A24]'}`}>
                       {s.title}
                     </h4>
-                    <p className="text-xs text-slate-300 mt-1 leading-relaxed">{s.desc}</p>
+                    <p className="text-xs text-[#6B6258] mt-1 leading-relaxed">{s.desc}</p>
                   </div>
 
                   <button
@@ -109,9 +120,10 @@ function SIHDemoModal({
                       s.execute();
                       onClose();
                     }}
-                    className="px-4 py-2 rounded-xl bg-gold-gradient text-slate-950 font-bold text-xs shadow-md hover:brightness-110 shrink-0 self-start sm:self-auto"
+                    className="px-4 py-2 rounded-xl bg-[#B88746] hover:bg-[#9A6C2F] text-white font-bold text-xs shadow-sm btn-interactive btn-shimmer shrink-0 self-start sm:self-auto flex items-center space-x-1 border border-[#B88746]"
                   >
-                    {s.actionLabel} →
+                    <span>{s.actionLabel}</span>
+                    <span>→</span>
                   </button>
                 </div>
               </div>
@@ -120,13 +132,13 @@ function SIHDemoModal({
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
-          <p className="text-xs text-slate-400">
+        <div className="p-4 bg-[#F5EFE4] border-t border-[#E8DED0] flex items-center justify-between">
+          <p className="text-xs text-[#6B6258]">
             Click any step above to instantly demonstrate that feature live.
           </p>
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl glass-pill text-xs font-semibold text-slate-300 hover:text-white"
+            className="px-4 py-2 rounded-xl bg-[#FFFFFF] border border-[#E8DED0] text-xs font-semibold text-[#2F2A24] hover:bg-[#FAF8F3] btn-interactive"
           >
             Close Guide
           </button>

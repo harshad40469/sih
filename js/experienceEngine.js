@@ -53,7 +53,7 @@
         alpha: Math.random() * 0.35 + 0.1,
         speedX: (Math.random() - 0.5) * 0.25,
         speedY: (Math.random() - 0.5) * 0.25 - 0.1, // Slight upward drift
-        color: Math.random() > 0.4 ? 'rgba(245, 158, 11,' : 'rgba(234, 88, 12,'
+        color: Math.random() > 0.4 ? 'rgba(184, 135, 70,' : 'rgba(212, 167, 98,'
       });
     }
 
@@ -87,7 +87,7 @@
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${p.alpha})`;
         ctx.shadowBlur = 4;
-        ctx.shadowColor = 'rgba(245, 158, 11, 0.5)';
+        ctx.shadowColor = 'rgba(184, 135, 70, 0.4)';
         ctx.fill();
       }
 

@@ -104,7 +104,7 @@ function App() {
   const journeyIds = journeyItems.map(item => item.id);
 
   return (
-    <div className="min-h-screen bg-[#090D16] text-white flex flex-col selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen bg-[#FAF8F3] text-[#2F2A24] flex flex-col selection:bg-[#B88746] selection:text-white">
       
       {/* Navigation Header */}
       <Navbar
